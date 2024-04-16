@@ -42,16 +42,16 @@ def write_public_key_to_file(file_name, public_key):
 
 def main():
     # Generate a new private key
-
+    private_key = generate_private_key()
     # Generate a new public key tied to the private key
-
+    public_key = generate_public_key(private_key)
     # Print the private key to the screen
-
+    print(f'private_key:\n{ private_key }\n\n')
     # Write the private key to a file
-
+    write_private_key_to_file("my_private_key.pem", private_key)
     # Write the public key to a file
-
-    pass
+    write_public_key_to_file("my_public_key.pem", public_key)
+    
 
 if __name__ == "__main__":
     main()

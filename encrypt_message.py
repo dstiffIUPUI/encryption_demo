@@ -32,11 +32,14 @@ def main():
     public_key = load_public_key('my_public_key.pem')
 
     # Create a secret message and print it to the screen
-
+    message = b"Encryption testing lol"
     # Encrypt your message
-
+    print(f"Unencrypted message:\n{ message }\n\n")
+    encrypted_msg = encrypt_message(message, public_key)
+    print(f"Encrypted message:\n{ encrypted_msg }\n\n")
     # Write the encrypted message to a file
-
+    with open(' encrypted_message.bin', 'wb') as file:
+        file.write(encrypted_msg)
     pass
 
 if __name__ == "__main__":
